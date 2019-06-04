@@ -16,23 +16,23 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
-    applicationVariants.all{variant ->
-        variant.outputs.all{output ->
-            def outDirectory
-            def outputFile = output.outputFile
-            def fileName
-            //是否为Jekins打包，输出路径不同
-            if (IN_JENKINS.toBoolean()){
-                outDirectory = appReleaseDir
-                outputFileName = "test" + "_" + defaultConfig.versionName + "_" + getDate() + ".apk"
-            }else{
-                outDirectory = output.outputFile.getParent()
-                outputFileName = "test" + "_" + defaultConfig.versionName + "_" + getDate() + ".apk"
-            }
-            outputFile = new File(outDirectory, outputFileName)
-        }
-    }
+//
+//    applicationVariants.all{variant ->
+//        variant.outputs.all{output ->
+//            def outDirectory
+//            def outputFile = output.outputFile
+//            def fileName
+//            //是否为Jekins打包，输出路径不同
+//            if (IN_JENKINS.toBoolean()){
+//                outDirectory = appReleaseDir
+//                outputFileName = "test" + "_" + defaultConfig.versionName + "_" + getDate() + ".apk"
+//            }else{
+//                outDirectory = output.outputFile.getParent()
+//                outputFileName = "test" + "_" + defaultConfig.versionName + "_" + getDate() + ".apk"
+//            }
+//            outputFile = new File(outDirectory, outputFileName)
+//        }
+//    }
 }
 
 def getDate() {
