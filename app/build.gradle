@@ -33,6 +33,8 @@ android {
 //            outputFile = new File(outDirectory, outputFileName)
 //        }
 //    }
+    aaptOptions.cruncherEnabled = false
+
 }
 
 def getDate() {
